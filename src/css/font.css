@@ -77,3 +77,15 @@
     font-weight: 500;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'fontello';
+    src: url('../fonts/fontello.eot?99031842');
+    src: url('../fonts/fontello.eot?99031842#iefix') format('embedded-opentype'),
+    url('../fonts/fontello.woff2?99031842') format('woff2'),
+    url('../fonts/fontello.woff?99031842') format('woff'),
+    url('../fonts/fontello.ttf?99031842') format('truetype'),
+    url('../fonts/fontello.svg?99031842#fontello') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}

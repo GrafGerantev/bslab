@@ -7,57 +7,87 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BsLab</title>
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fontello.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-    <section class="promo">
-        <div class="promo__mask"></div>
-        <div class="promo__container">
-            <div class="promo-header">
-                <div class="promo-header__inner">
-                    <img src="icons/logo/bs-lab-logo.svg" alt="" class="logo">
-                    <div class="promo-header__contacts">
-                        <a href="mailto:hi@labbs.ru" class="promo-header__mail">hi@labbs.ru</a>
-                        <hr class="promo-header__line">
-                        <a href="tel:+78432513651" class="promo-header__phone">+7 843 251-36-51</a>
-                    </div>
+    <header class="header">
+        <div class="container header-container ">
+            <div class="header__inner">
+                <img src="icons/logo/bs-lab-logo.svg" alt="" class="logo logo__header">
+                <div class="header__contacts">
+                    <a href="mailto:hi@labbs.ru" class="header__mail">hi@labbs.ru</a>
+                    <hr class="header__line">
+                    <a href="tel:+78432513651" class="header__phone">+7 843 251-36-51</a>
                 </div>
             </div>
-            <!--/.promo-header-->
         </div>
-        <div class="promo-aside">
+        <div class="header-aside">
+            <div class="header-aside__item header-aside__item-first ">
+                <span></span>
+                <span></span>
+            </div>
+            <!--/.header-aside__item-->
+            <div class="header-aside__inner">
+                <div class="header-aside__item">
+                    <div class="header-aside__number">3</div>
+                    <div class="header-aside__descr">Года успешной работы</div>
+                </div>
+                <!--/.header-aside__item-->
+                <div class="header-aside__item">
+                    <div class="header-aside__number">151</div>
+                    <div class="header-aside__descr">Стратегия</div>
+                </div>
+                <!--/.header-aside__item-->
+                <div class="header-aside__item">
+                    <div class="header-aside__number">5</div>
+                    <div class="header-aside__descr">Спасенных репутаций компаний</div>
+                </div>
+                <!--/.header-aside__item-->
+                <div class="header-aside__item">
+                    <div class="header-aside__number">25</div>
+                    <div class="header-aside__descr">Человек в штате</div>
+                </div>
+                <!--/.header-aside__item-->
+            </div>
+        </div>
+        <!--/.header-aside-->
+    </header>
+    <section class="promo">
+        <div class="promo__mask"></div>
+        <!--<div class="promo-aside">
             <div class="promo-aside__item promo-aside__item-first ">
                 <span></span>
                 <span></span>
             </div>
-            <!--/.promo-aside__item-->
+            &lt;!&ndash;/.promo-aside__item&ndash;&gt;
             <div class="promo-aside__inner">
                 <div class="promo-aside__item">
                     <div class="promo-aside__number">3</div>
                     <div class="promo-aside__descr">Года успешной работы</div>
                 </div>
-                <!--/.promo-aside__item-->
+                &lt;!&ndash;/.promo-aside__item&ndash;&gt;
                 <div class="promo-aside__item">
                     <div class="promo-aside__number">151</div>
                     <div class="promo-aside__descr">Стратегия</div>
                 </div>
-                <!--/.promo-aside__item-->
+                &lt;!&ndash;/.promo-aside__item&ndash;&gt;
                 <div class="promo-aside__item">
                     <div class="promo-aside__number">5</div>
                     <div class="promo-aside__descr">Спасенных репутаций компаний</div>
                 </div>
-                <!--/.promo-aside__item-->
+                &lt;!&ndash;/.promo-aside__item&ndash;&gt;
                 <div class="promo-aside__item">
                     <div class="promo-aside__number">25</div>
                     <div class="promo-aside__descr">Человек в штате</div>
                 </div>
-                <!--/.promo-aside__item-->
+                &lt;!&ndash;/.promo-aside__item&ndash;&gt;
             </div>
         </div>
-        <!--/.promo-aside-->
+        &lt;!&ndash;/.promo-aside&ndash;&gt;-->
         <div class="promo__container">
             <div class="promo__inner">
                 <h1 class="promo__title">Лаборатория интернет продвижения</h1>
@@ -114,13 +144,13 @@
                 <!--/.specialization-descr__content-->
             </div>
             <!--/.specialization-descr-->
-            <div class="specialization-detail">
-                <div class="text-arrow text-arrow-deg">
-                    <a href="#" class="text-arrow__text text-arrow__text_white">подробнее о нас</a>
-                    <div class="text-arrow__arrow text-arrow__arrow_white"></div>
-                </div>
+            <a href="#" class="specialization-detail">
+                <span class="text-arrow text-arrow-deg">
+                    <span class="text-arrow__text text-arrow__text_white">подробнее о нас</span>
+                    <span class="text-arrow__arrow text-arrow__arrow_white"></span>
+                </span>
                 <!--/.text-arrow-->
-            </div>
+            </a>
         </div>
         <!--/.specialization__inner-->
     </section>
@@ -141,94 +171,120 @@
             <!--/.doing__header-->
             <div class="doing__inner">
                 <div class="doing-item">
-                    <div class="doing-item__subtitle">Реклама в Google и Яндекс</div>
-                    <div class="doing-item__descr">Поисковая, баннерная, текстово-графическая,  динамическая</div>
-                    <div class="text-arrow doing-item__text-arrow">
-                        <a href="#" class="text-arrow__text text-arrow__text_white text-arrow__text_none">Узнать Подробнее</a>
-                        <div class="text-arrow__arrow  text-arrow__arrow_blue"></div>
-                    </div>
-                    <!--/.text-arrow-->
+                    <a href="#" class="doing-item__link">
+                        <div class="doing-item__subtitle">Реклама в Google и Яндекс</div>
+                        <div class="doing-item__descr">Поисковая, баннерная, текстово-графическая,  динамическая</div>
+                        <div class="text-arrow doing-item__text-arrow">
+                            <div class="text-arrow__text text-arrow__text_white text-arrow__text_none">Узнать Подробнее</div>
+                            <div class="text-arrow__arrow  text-arrow__arrow_blue"></div>
+                        </div>
+                        <!--/.text-arrow-->
+                    </a>
+                    <!--/.doing-item__link-->
                 </div>
                 <!--/.doing-item-->
                 <div class="doing-item">
-                    <div class="doing-item__subtitle">Реклама в социальных сетях</div>
-                    <div class="doing-item__descr">Таргетированная реклама</div>
-                    <div class="text-arrow doing-item__text-arrow">
-                        <a href="#" class="text-arrow__text text-arrow__text_white text-arrow__text_none">Узнать Подробнее</a>
-                        <div class="text-arrow__arrow  text-arrow__arrow_blue"></div>
-                    </div>
-                    <!--/.text-arrow-->
+                    <a href="#" class="doing-item__link">
+                        <div class="doing-item__subtitle">Реклама в социальных сетях</div>
+                        <div class="doing-item__descr">Таргетированная реклама</div>
+                        <div class="text-arrow doing-item__text-arrow">
+                            <div class="text-arrow__text text-arrow__text_white text-arrow__text_none">Узнать Подробнее</div>
+                            <div class="text-arrow__arrow  text-arrow__arrow_blue"></div>
+                        </div>
+                        <!--/.text-arrow-->
+                    </a>
+                    <!--/.doing-item__link-->
                 </div>
                 <!--/.doing-item-->
                 <div class="doing-item">
-                    <div class="doing-item__subtitle">Seo</div>
-                    <div class="doing-item__descr">Оптимизация сайта для поисковых систем Яндекс, Google</div>
-                    <div class="text-arrow doing-item__text-arrow">
-                        <a href="#" class="text-arrow__text text-arrow__text_white text-arrow__text_none">Узнать Подробнее</a>
-                        <div class="text-arrow__arrow  text-arrow__arrow_blue"></div>
-                    </div>
-                    <!--/.text-arrow-->
+                    <a href="#" class="doing-item__link">
+                        <div class="doing-item__subtitle">Seo</div>
+                        <div class="doing-item__descr">Оптимизация сайта для поисковых систем Яндекс, Google</div>
+                        <div class="text-arrow doing-item__text-arrow">
+                            <div class="text-arrow__text text-arrow__text_white text-arrow__text_none">Узнать Подробнее</div>
+                            <div class="text-arrow__arrow  text-arrow__arrow_blue"></div>
+                        </div>
+                        <!--/.text-arrow-->
+                    </a>
+                    <!--/.doing-item__link-->
                 </div>
                 <!--/.doing-item-->
                 <div class="doing-item">
-                    <div class="doing-item__subtitle">Orm</div>
-                    <div class="doing-item__descr">Управление репутацией в интернете</div>
-                    <div class="text-arrow doing-item__text-arrow">
-                        <a href="#" class="text-arrow__text text-arrow__text_white text-arrow__text_none">Узнать Подробнее</a>
-                        <div class="text-arrow__arrow  text-arrow__arrow_blue"></div>
-                    </div>
-                    <!--/.text-arrow-->
+                    <a href="#" class="doing-item__link">
+                        <div class="doing-item__subtitle">Orm</div>
+                        <div class="doing-item__descr">Управление репутацией в интернете</div>
+                        <div class="text-arrow doing-item__text-arrow">
+                            <div class="text-arrow__text text-arrow__text_white text-arrow__text_none">Узнать Подробнее</div>
+                            <div class="text-arrow__arrow  text-arrow__arrow_blue"></div>
+                        </div>
+                        <!--/.text-arrow-->
+                    </a>
+                    <!--/.doing-item__link-->
                 </div>
                 <!--/.doing-item-->
                 <div class="doing-item">
-                    <div class="doing-item__subtitle">Smm</div>
-                    <div class="doing-item__descr">Комплекс работ с брендом в социальных сетях</div>
-                    <div class="text-arrow doing-item__text-arrow">
-                        <a href="#" class="text-arrow__text text-arrow__text_white text-arrow__text_none">Узнать Подробнее</a>
-                        <div class="text-arrow__arrow  text-arrow__arrow_blue"></div>
-                    </div>
-                    <!--/.text-arrow-->
+                    <a href="#" class="doing-item__link">
+                        <div class="doing-item__subtitle">Smm</div>
+                        <div class="doing-item__descr">Комплекс работ с брендом в социальных сетях</div>
+                        <div class="text-arrow doing-item__text-arrow">
+                            <div class="text-arrow__text text-arrow__text_white text-arrow__text_none">Узнать Подробнее</div>
+                            <div class="text-arrow__arrow  text-arrow__arrow_blue"></div>
+                        </div>
+                        <!--/.text-arrow-->
+                    </a>
+                    <!--/.doing-item__link-->
                 </div>
                 <!--/.doing-item-->
                 <div class="doing-item">
-                    <div class="doing-item__subtitle">Лидогенерация</div>
-                    <div class="doing-item__descr">Сбор заявок и номеров телефонов для базы клиента</div>
-                    <div class="text-arrow doing-item__text-arrow">
-                        <a href="#" class="text-arrow__text text-arrow__text_white text-arrow__text_none">Узнать Подробнее</a>
-                        <div class="text-arrow__arrow  text-arrow__arrow_blue"></div>
-                    </div>
-                    <!--/.text-arrow-->
+                    <a href="#" class="doing-item__link">
+                        <div class="doing-item__subtitle">Лидогенерация</div>
+                        <div class="doing-item__descr">Сбор заявок и номеров телефонов для базы клиента</div>
+                        <div class="text-arrow doing-item__text-arrow">
+                            <div class="text-arrow__text text-arrow__text_white text-arrow__text_none">Узнать Подробнее</div>
+                            <div class="text-arrow__arrow  text-arrow__arrow_blue"></div>
+                        </div>
+                        <!--/.text-arrow-->
+                    </a>
+                    <!--/.doing-item__link-->
                 </div>
                 <!--/.doing-item-->
                 <div class="doing-item">
-                    <img src="icons/speaker/speaker.svg" alt="" class="doing-item__img">
-                    <div class="doing-item__subtitle">Аудиореклама</div>
-                    <div class="doing-item__descr">Реклама при прослушивании музыки в социальных сетях</div>
-                    <div class="text-arrow doing-item__text-arrow">
-                        <a href="#" class="text-arrow__text text-arrow__text_white text-arrow__text_none">Узнать Подробнее</a>
-                        <div class="text-arrow__arrow  text-arrow__arrow_blue"></div>
-                    </div>
-                    <!--/.text-arrow-->
+                    <a href="#" class="doing-item__link">
+                        <div class="doing-item__subtitle">Аудиореклама</div>
+                        <div class="doing-item__descr">Реклама при прослушивании музыки в социальных сетях</div>
+                        <div class="text-arrow doing-item__text-arrow">
+                            <div class="text-arrow__text text-arrow__text_white text-arrow__text_none">Узнать Подробнее</div>
+                            <div class="text-arrow__arrow  text-arrow__arrow_blue"></div>
+                        </div>
+                        <!--/.text-arrow-->
+                    </a>
+                    <!--/.doing-item__link-->
                 </div>
                 <!--/.doing-item-->
                 <div class="doing-item">
-                    <div class="doing-item__subtitle">Оптимизация отдела продаж</div>
-                    <div class="doing-item__descr">Сбор заявок и номеров телефонов для базы клиента</div>
-                    <div class="text-arrow doing-item__text-arrow">
-                        <a href="#" class="text-arrow__text text-arrow__text_white text-arrow__text_none">Узнать Подробнее</a>
-                        <div class="text-arrow__arrow  text-arrow__arrow_blue"></div>
-                    </div>
-                    <!--/.text-arrow-->
+                    <a href="#" class="doing-item__link">
+                        <div class="doing-item__subtitle">Оптимизация отдела продаж</div>
+                        <div class="doing-item__descr">Ведение полного цикла работы отдела продаж</div>
+                        <div class="text-arrow doing-item__text-arrow">
+                            <div class="text-arrow__text text-arrow__text_white text-arrow__text_none">Узнать Подробнее</div>
+                            <div class="text-arrow__arrow  text-arrow__arrow_blue"></div>
+                        </div>
+                        <!--/.text-arrow-->
+                    </a>
+                    <!--/.doing-item__link-->
                 </div>
                 <!--/.doing-item-->
                 <div class="doing-item">
-                    <div class="doing-item__subtitle">Создание сайтов</div>
-                    <div class="doing-item__descr">Находим смыслы и прорабатываем крутые сайты</div>
-                    <div class="text-arrow doing-item__text-arrow">
-                        <a href="#" class="text-arrow__text text-arrow__text_white text-arrow__text_none">Узнать Подробнее</a>
-                        <div class="text-arrow__arrow  text-arrow__arrow_blue"></div>
-                    </div>
-                    <!--/.text-arrow-->
+                    <a href="#" class="doing-item__link">
+                        <div class="doing-item__subtitle">Создание сайтов</div>
+                        <div class="doing-item__descr">Находим смыслы и прорабатываем крутые сайты</div>
+                        <div class="text-arrow doing-item__text-arrow">
+                            <div class="text-arrow__text text-arrow__text_white text-arrow__text_none">Узнать Подробнее</div>
+                            <div class="text-arrow__arrow  text-arrow__arrow_blue"></div>
+                        </div>
+                        <!--/.text-arrow-->
+                    </a>
+                    <!--/.doing-item__link-->
                 </div>
                 <!--/.doing-item-->
             </div>
@@ -250,11 +306,10 @@
                         <textarea name="descr" placeholder="Описание" type="text" class="feedback-form__input feedback-form__input_descr"></textarea>
                     </div>
                     <!--/.feedback-form__inner_right-->
-                </div>
-                <!--/.feedback-form__inner-->
-                <div class="feedback-form__footer">
-                    <input name="check" id="check" type="checkbox" class="feedback-form__footer_check">
-                    <label class="feedback-form__footer_label" for="check"><a href="#"> Я принимаю политику обработки персональных данных</a></label>
+                    <div class="personal-data">
+                        <input name="check" id="check" type="checkbox" class="personal-data_check">
+                        <label class="personal-data_label icon-ok" for="check"><a href="#"> Я принимаю политику обработки персональных данных</a></label>
+                    </div>
                     <button type="submit" class="btn btn__form">
                         <div class="text-arrow text-arrow_btn ">
                             <a href="#" class="text-arrow__text text-arrow__text_white">Посмотреть все услуги</a>
@@ -263,6 +318,7 @@
                         <!--/.text-arrow-->
                     </button>
                 </div>
+                <!--/.feedback-form__inner-->
             </form>
             <!--/.form-->
         </div>
@@ -291,14 +347,14 @@
                         продвижения
                     </div>
                     <div class="footer__contacts">
-                        <a href="#" class="footer__link">Наша презентация</a>
+                        <a href="#" class="download download_white">Наша презентация</a>
                         <address class="footer__address">г. Казань, ул. Университетская д. 20</address>
                         <a href="hi@labbs.ru" class="footer__email">hi@labbs.ru</a>
                         <a href="+78432513651" class="footer__phone">+7 (843) 251-36-51</a>
                     </div>
                 </div>
                 <!--/.footer__inner-middle-->
-                <a href="#" class="footer__policy">Политика конфиденциальности</a>
+                <a href="#" class="policy">Политика конфиденциальности</a>
             </div>
             <!--/.footer__inner-->
         </div>

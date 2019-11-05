@@ -1,20 +1,39 @@
 .download
-  display: block
+  display: inline-block
   font-size: 16px
   position: relative
-  padding-left: 41px
   z-index: 3
-  &::before
-    content: ""
-    display: block
-    width: 26px
-    height: 32px
-    background-image: url("../../icons/download/download.svg")
-    position: absolute
-    top: -6px
-    left: 0
   &_blue
     color: #315efb
     font-weight: 600
     letter-spacing: 3px
     text-transform: uppercase
+    padding-left: 41px
+    &::before
+      content: ""
+      display: block
+      width: 26px
+      height: 32px
+      background-image: url("../../icons/download/download.svg")
+      position: absolute
+      top: -6px
+      left: 0
+  &_white
+    display: block
+    font-size: 16px
+    font-weight: 500
+    text-decoration: underline
+    color: #fff
+    position: relative
+    z-index: 3
+    margin-left: 48px
+    &:before
+      content: ""
+      display: block
+      background-image: url("../../icons/download/download-footer.svg")
+      width: 26px
+      height: 32px
+      position: absolute
+      top: 50%
+      left: -37px
+      transform: translateY(-50%)
