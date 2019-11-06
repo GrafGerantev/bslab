@@ -5,13 +5,15 @@ $(document).ready(function(){
         $('.header-aside__inner').toggleClass('header-aside__inner-active');
     });
     //Modal
-    $('.promo-play__circle-play').on('click', function (e) {
+/*    $('.promo-play__circle-play').on('click', function (e) {
         e.preventDefault();
         $('.overlay').fadeIn('slow');
     })
     $('.modal__close').on('click', function () {
         $('.overlay').fadeOut('slow');
-    });
+    });*/
+
+
     //Hover
     /*$('.doing-item').hover(function () {
         $('.doing-item .text-arrow__text').toggleClass('text-arrow__text_none');

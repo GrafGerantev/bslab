@@ -48,16 +48,16 @@ gulp.task('html', function () {
         .pipe(gulp.dest("dist/"));
 });
 /*Таск для сборки всех библиотек в один файл*/
-/*gulp.task('scripts', function() {
+gulp.task('scripts', function() {
     return gulp.src([ // Берем все необходимые библиотеки
-        'src/libs/jquery/dist/jquery.min.js', // Берем jQuery
-        'src/libs/magnific-popup/dist/jquery.magnific-popup.min.js' // Берем Magnific Popup
+        'src/libs/**/*.js' // Берем jQuery
+         // Берем Magnific Popup
     ])
         .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
         .pipe(uglify()) // Сжимаем JS файл
-        .pipe(gulp.dest('src/js')); // Выгружаем в папку app/js
+        .pipe(gulp.dest('src/js')) // Выгружаем в папку app/js
         .pipe(browserSync.reload({stream: true}));
-});*/
+});
 
 gulp.task('clean', async function() {
     return del.sync('dist'); // Удаляем папку dist перед сборкой
@@ -109,10 +109,10 @@ gulp.task('watch', function() {
     gulp.watch("src/sass/**/*.+(scss|sass|css)", gulp.parallel('styles'));
     gulp.watch("src/*.html").on('change', gulp.parallel('html'));
     gulp.watch("src/js/**/*.js", gulp.parallel("code"));
-    /*gulp.watch(['src/js/script.js', 'src/libs/!**!/!*.js'], gulp.parallel('scripts'));*/
+    gulp.watch(['src/js/script.js', 'src/libs/**/*.js'], gulp.parallel('scripts'));
     /*Активировать, если есть библиотеки Jquery и т.д.*/
 });
 
 
-gulp.task('default', gulp.parallel('styles', 'code', 'server', 'watch'    /*'scripts', 'fonts', 'icons', 'mailer', 'html', 'images'*/ /*Активировать когда будет готово для dist*/));
+gulp.task('default', gulp.parallel('styles', 'code', 'server', 'watch' , 'scripts' /*'fonts', 'icons', 'mailer', 'html', 'images'*/ /*Активировать когда будет готово для dist*/));
 gulp.task('build', gulp.parallel('clean', 'img', 'styles', 'icons', 'fonts', 'html', 'styledist', 'jsdist'/*, 'scripts'*/));
