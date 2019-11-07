@@ -42,16 +42,23 @@ gulp.task('code', function () {
         .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('html', function () {
-    return gulp.src("src/**/*.html")
-        .pipe(htmlmin({ collapseWhitespace: true }))
-        .pipe(gulp.dest("dist/"));
+gulp.task('css', function(){
+    return gulp.src([
+        'src/css/normalize.css',
+        'src/css/font.css',
+        'src/css/fontello.css',
+        'src/css/jquery.fancybox.min.css',
+    ])
+        .pipe(concat('_libs.css'))
+        .pipe(gulp.dest('src/css'))
+        .pipe(browserSync.reload({stream: true}))
 });
+
 /*Таск для сборки всех библиотек в один файл*/
 gulp.task('scripts', function() {
     return gulp.src([ // Берем все необходимые библиотеки
         'src/libs/**/*.js' // Берем jQuery
-         // Берем Magnific Popup
+        // Берем Magnific Popup
     ])
         .pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
         .pipe(uglify()) // Сжимаем JS файл
@@ -59,20 +66,26 @@ gulp.task('scripts', function() {
         .pipe(browserSync.reload({stream: true}));
 });
 
+/*Экспорт*/
 gulp.task('clean', async function() {
     return del.sync('dist'); // Удаляем папку dist перед сборкой
 });
 
-gulp.task('styledist', function () {
-    return gulp.src("src/css/**/*")
-        .pipe(gulp.dest("dist/css"));
-});
-gulp.task('jsdist', function () {
-    return gulp.src("src/js/**/*")
-        .pipe(gulp.dest("dist/js"));
-});
-gulp.task('icons', function () {
-    return gulp.src('src/icons/**/*') // Берем все изображения из app
+gulp.task('export', function(){
+    let buildHtml = gulp.src('src/**/*.html')
+        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(gulp.dest('dist'));
+
+    let BuildCss = gulp.src('src/css/**/*.css')
+        .pipe(gulp.dest('dist/css'));
+
+    let BuildJs = gulp.src('src/js/**/*.js')
+        .pipe(gulp.dest('dist/js'));
+
+    let BuildFonts = gulp.src('src/fonts/**/*.*')
+        .pipe(gulp.dest('dist/fonts'));
+
+    let BuildImg = gulp.src('src/img/**/*.*')
         .pipe(cache(imagemin({ // С кешированием
             // .pipe(imagemin({ // Сжимаем изображения без кеширования
             interlaced: true,
@@ -80,39 +93,32 @@ gulp.task('icons', function () {
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()]
         }))/**/)
-        .pipe(gulp.dest('dist/icons')); // Выгружаем на продакшен
+        .pipe(gulp.dest('dist/img'));
+    let BuildIcons = gulp.src('src/icons/**/*.*')
+        .pipe(cache(imagemin({ // С кешированием
+            // .pipe(imagemin({ // Сжимаем изображения без кеширования
+            interlaced: true,
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        })))
+        .pipe(gulp.dest('dist/icons'));
 });
+
 
 /*gulp.task('mailer', function () {
     return gulp.src("src/mailer/!**!/!*")
         .pipe(gulp.dest("dist/mailer"));
 });*/
 
-gulp.task('img', function() {
-    return gulp.src('src/img/**/*') // Берем все изображения из app
-        .pipe(cache(imagemin({ // С кешированием
-            // .pipe(imagemin({ // Сжимаем изображения без кеширования
-            interlaced: true,
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngquant()]
-        }))/**/)
-        .pipe(gulp.dest('dist/img')); // Выгружаем на продакшен
-});
-
-gulp.task('fonts', function () {
-    return gulp.src("src/fonts/**/*")
-        .pipe(gulp.dest("dist/fonts"));
-});
-
 gulp.task('watch', function() {
     gulp.watch("src/sass/**/*.+(scss|sass|css)", gulp.parallel('styles'));
-    gulp.watch("src/*.html").on('change', gulp.parallel('html'));
+    /*gulp.watch("src/!*.html").on('change', gulp.parallel('html'));*/
     gulp.watch("src/js/**/*.js", gulp.parallel("code"));
     gulp.watch(['src/js/script.js', 'src/libs/**/*.js'], gulp.parallel('scripts'));
     /*Активировать, если есть библиотеки Jquery и т.д.*/
 });
 
 
-gulp.task('default', gulp.parallel('styles', 'code', 'server', 'watch' , 'scripts' /*'fonts', 'icons', 'mailer', 'html', 'images'*/ /*Активировать когда будет готово для dist*/));
-gulp.task('build', gulp.parallel('clean', 'img', 'styles', 'icons', 'fonts', 'html', 'styledist', 'jsdist'/*, 'scripts'*/));
+gulp.task('default', gulp.parallel('styles', 'css', 'code', 'server', 'watch' , 'scripts' /*'fonts', 'icons', 'mailer', 'html', 'images'*/ /*Активировать когда будет готово для dist*/));
+gulp.task('build', gulp.parallel('clean', 'export'/*, 'scripts'*/));
